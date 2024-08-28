@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth import authenticate
 
+from join.models import User
+
 
 class EmailAuthTokenSerializer(serializers.Serializer):
     email = serializers.EmailField()
@@ -23,3 +25,8 @@ class EmailAuthTokenSerializer(serializers.Serializer):
 
         attrs["user"] = user
         return attrs
+    
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'user_color']

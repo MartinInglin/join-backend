@@ -7,7 +7,9 @@ from rest_framework.response import Response
 from django.contrib.auth import get_user_model
 from rest_framework.views import APIView
 from rest_framework import status
-from .serializers import EmailAuthTokenSerializer
+from rest_framework.permissions import IsAuthenticated
+from join.models import Team, User
+from .serializers import EmailAuthTokenSerializer, UserSerializer
 from django.contrib.auth import logout
 
 
@@ -29,6 +31,7 @@ class LoginView(ObtainAuthToken):
                     "user_id": user.pk,
                     "email": user.email,
                     "color": user.user_color,
+                    "name": user.username,
                 }
             )
         except IntegrityError:
@@ -48,9 +51,10 @@ class RegisterView(APIView):
         User = get_user_model()
 
         try:
-            User.objects.create_user(
+            user = User.objects.create_user(
                 username=username, email=email, password=password, user_color=user_color
             )
+            self.create_team(user)
             return Response(
                 {"message": "User created successfully"},
                 status=status.HTTP_201_CREATED,
@@ -61,8 +65,33 @@ class RegisterView(APIView):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
+    def create_team(self, user):
+        team = Team.objects.create(owner=user)
+        team.members.add(user)
+
 
 class LogoutView(APIView):
+    permission_classes = []
+
     def post(self, request):
         logout(request)
-        return Response({"message": "Logged out successfully"}, status=status.HTTP_200_OK)
+        return Response(
+            {"message": "Logged out successfully"}, status=status.HTTP_200_OK
+        )
+    
+class TeamView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        team = Team.objects.filter(owner=request.user).first()
+
+        if not team:
+            return Response(
+                {"error": "Team not found or you do not have permission to view it."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        
+        members = team.members.all()
+
+        serializer = UserSerializer(members, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
