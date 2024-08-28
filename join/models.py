@@ -2,6 +2,12 @@ from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
 
 
+from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
+
+from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
+
 class User(AbstractUser):
     email = models.EmailField(unique=True)
 
@@ -19,3 +25,18 @@ class User(AbstractUser):
         help_text="Specific permissions for this user.",
         related_query_name="user",
     )
+
+    user_color = models.CharField(
+        max_length=7,
+        blank=True,
+        null=True,
+        help_text="A hex code representing the user's color."
+    )
+
+    phone_number = models.CharField(
+        max_length=15,
+        blank=True,
+        null=True,
+        help_text="The user's phone number."
+    )
+
