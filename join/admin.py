@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth import get_user_model
-from .models import Team
+from .models import Task, Team
 
 User = get_user_model()
 
@@ -18,12 +18,23 @@ class UserAdmin(BaseUserAdmin):
         (None, {"fields": ("user_color", "phone_number")}),
     )
 
+
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ('owner',)  # Customize fields displayed in the list view
-    search_fields = ('owner__username', 'members__username')  # Allow searching by owner and members
-    filter_horizontal = ('members',)  # Enable easier management of members in the team
+    list_display = ("owner",)
+    search_fields = ("owner__username", "members__username")
+    filter_horizontal = ("members",)
 
 
-# Register the customized UserAdmin
+@admin.register(Task)
+class TaskAdmin(admin.ModelAdmin):
+    list_display = (
+        "author",
+        "title",
+    )
+    search_fields = ("author__username", "title")
+    list_filter = ("urgency", "category", "position")
+    filter_horizontal = ("assignedTo",)
+
+
 admin.site.register(User, UserAdmin)

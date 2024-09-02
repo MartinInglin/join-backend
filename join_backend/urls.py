@@ -18,7 +18,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from join.views import LoginView, LogoutView, RegisterView, TeamView
+from join.views import (
+    LoginView,
+    LogoutView,
+    RegisterView,
+    TeamView,
+    AddMemberView,
+    AddTaskView,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -26,4 +33,6 @@ urlpatterns = [
     path("register/", RegisterView.as_view()),
     path("logout/", LogoutView.as_view()),
     path("team/", TeamView.as_view()),
+    path("addMember/", AddMemberView.as_view()),
+    path("addTask/", AddTaskView.as_view()),
 ]

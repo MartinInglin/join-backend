@@ -8,10 +8,12 @@ from django.contrib.auth import get_user_model
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 from join.models import Team, User
-from .serializers import EmailAuthTokenSerializer, UserSerializer
+from .serializers import EmailAuthTokenSerializer, TaskSerializer, UserSerializer
 from django.contrib.auth import logout
 
+User = get_user_model()
 
 class LoginView(ObtainAuthToken):
     serializer_class = EmailAuthTokenSerializer
@@ -78,9 +80,11 @@ class LogoutView(APIView):
         return Response(
             {"message": "Logged out successfully"}, status=status.HTTP_200_OK
         )
-    
+
+
 class TeamView(APIView):
     permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
 
     def get(self, request):
         team = Team.objects.filter(owner=request.user).first()
@@ -88,10 +92,101 @@ class TeamView(APIView):
         if not team:
             return Response(
                 {"error": "Team not found or you do not have permission to view it."},
-                status=status.HTTP_404_NOT_FOUND
+                status=status.HTTP_404_NOT_FOUND,
             )
-        
+
         members = team.members.all()
 
         serializer = UserSerializer(members, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    def post(self, request):
+        team = Team.objects.filter(owner=request.user).first()
+
+        if not team:
+            return Response(
+                {"error": "Team not found or you do not have permission to view it."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        user_id = request.data.get("user_id")
+
+        if not user_id:
+            return Response(
+                {"error": "No user ID provided."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            user_to_add = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return Response(
+                {"error": "User not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        team.members.remove(user_to_add)
+        return Response(
+            {"message": "User added to the team successfully."},
+            status=status.HTTP_200_OK
+        )
+
+
+
+class AddMemberView(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+
+    def get(self, request):
+        users = User.objects.all()
+
+        serializer = UserSerializer(users, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+
+    def post(self, request):
+        team = Team.objects.filter(owner=request.user).first()
+
+        if not team:
+            return Response(
+                {"error": "Team not found or you do not have permission to view it."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        user_id = request.data.get("user_id")
+
+        if not user_id:
+            return Response(
+                {"error": "No user ID provided."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            user_to_add = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return Response(
+                {"error": "User not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        team.members.add(user_to_add)
+        return Response(
+            {"message": "User added to the team successfully."},
+            status=status.HTTP_200_OK
+        )
+    
+class AddTaskView(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+
+    def post(self, request):
+        serializer = TaskSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+    
+
+

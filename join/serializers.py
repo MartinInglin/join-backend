@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import authenticate
 
-from join.models import User
+from join.models import Task, User
 
 
 class EmailAuthTokenSerializer(serializers.Serializer):
@@ -25,8 +25,26 @@ class EmailAuthTokenSerializer(serializers.Serializer):
 
         attrs["user"] = user
         return attrs
-    
+
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'email', 'user_color']
+        fields = ["id", "username", "email", "user_color"]
+
+
+class TaskSerializer(serializers.ModelSerializer):
+    assignedTo = serializers.PrimaryKeyRelatedField(
+        queryset=User.objects.all(), many=True, required=False
+    )
+
+    class Meta:
+        model = Task
+        fields = "__all__"
+
+    def create(self, validated_data):
+        assignedTo_data = validated_data.pop("assignedTo", [])
+        task = Task.objects.create(**validated_data)
+        if assignedTo_data:
+            task.assignedTo.set(assignedTo_data)
+        return task
