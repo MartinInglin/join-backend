@@ -48,3 +48,10 @@ class TaskSerializer(serializers.ModelSerializer):
         if assignedTo_data:
             task.assignedTo.set(assignedTo_data)
         return task
+
+class TaskReadSerializer(serializers.ModelSerializer):
+    assignedTo = UserSerializer(many=True, required=False)
+
+    class Meta:
+        model = Task
+        fields = "__all__"

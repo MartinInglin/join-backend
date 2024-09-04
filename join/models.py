@@ -54,6 +54,7 @@ class Task(models.Model):
         ("todo", "Todo"),
         ("in_progress", "In progress"),
         ("await_feedback", "Await feedback"),
+        ("done", "Done")
     ]
 
     author = models.ForeignKey(

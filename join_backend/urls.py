@@ -25,6 +25,7 @@ from join.views import (
     TeamView,
     AddMemberView,
     AddTaskView,
+    BoardView,
 )
 
 urlpatterns = [
@@ -35,4 +36,5 @@ urlpatterns = [
     path("team/", TeamView.as_view()),
     path("addMember/", AddMemberView.as_view()),
     path("addTask/", AddTaskView.as_view()),
+    path("board/", BoardView.as_view()),
 ]
