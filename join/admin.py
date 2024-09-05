@@ -31,6 +31,7 @@ class TaskAdmin(admin.ModelAdmin):
     list_display = (
         "author",
         "title",
+        "id",
     )
     search_fields = ("author__username", "title")
     list_filter = ("urgency", "category", "position")
