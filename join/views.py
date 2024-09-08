@@ -57,8 +57,6 @@ class RegisterView(APIView):
         password = request.data.get("password")
         user_color = request.data.get("icon")
 
-        User = get_user_model()
-
         try:
             user = User.objects.create_user(
                 username=username, email=email, password=password, user_color=user_color

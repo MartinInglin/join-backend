@@ -17,6 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import RedirectView
 
 from join.views import (
     LoginView,
@@ -29,6 +30,7 @@ from join.views import (
 )
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/admin/', permanent=True)),
     path("admin/", admin.site.urls),
     path("login/", LoginView.as_view()),
     path("register/", RegisterView.as_view()),
