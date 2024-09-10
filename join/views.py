@@ -26,6 +26,9 @@ class LoginView(ObtainAuthToken):
     serializer_class = EmailAuthTokenSerializer
 
     def post(self, request, *args, **kwargs):
+        """
+        This function gets the user data and returns it in case the user signs in.
+        """
         serializer = self.serializer_class(
             data=request.data, context={"request": request}
         )
@@ -51,6 +54,9 @@ class LoginView(ObtainAuthToken):
 
 
 class RegisterView(APIView):
+    """
+    This function creates a new user and a new team for the user.
+    """
     def post(self, request):
         username = request.data.get("username")
         email = request.data.get("email")
@@ -81,6 +87,9 @@ class LogoutView(APIView):
     permission_classes = []
 
     def post(self, request):
+        """
+        This function signs out the user.
+        """
         logout(request)
         return Response(
             {"message": "Logged out successfully"}, status=status.HTTP_200_OK
@@ -92,6 +101,9 @@ class TeamView(APIView):
     authentication_classes = [TokenAuthentication]
 
     def get(self, request):
+        """
+        This function returns the team of the user.
+        """
         team = Team.objects.filter(owner=request.user).first()
 
         if not team:
@@ -106,6 +118,9 @@ class TeamView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):
+        """
+        This function removes deletes a user from a team. It calls functions to remove the user from the team and from all the tasks the user is assigned to.
+        """
         response = self.remove_member_from_team(request)
         if response.status_code != status.HTTP_200_OK:
             return response
@@ -162,12 +177,18 @@ class AddMemberView(APIView):
     authentication_classes = [TokenAuthentication]
 
     def get(self, request):
+        """
+        This function returns all users.
+        """
         users = User.objects.all()
 
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):
+        """
+        This function adds a user to a team.
+        """
         team = get_team(request)
         if isinstance(team, Response):
             return team
@@ -181,6 +202,7 @@ class AddMemberView(APIView):
             return user_to_add
 
         team.members.add(user_to_add)
+        
         return Response(
             {"message": "User added to the team successfully."},
             status=status.HTTP_200_OK,
@@ -192,6 +214,9 @@ class AddTaskView(APIView):
     authentication_classes = [TokenAuthentication]
 
     def post(self, request):
+        """
+        This function creates a new task.
+        """
         serializer = TaskSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -204,10 +229,16 @@ class BoardView(APIView):
     authentication_classes = [TokenAuthentication]
 
     def get(self, request):
+        """
+        This function gets all the tasks the user is owner of or is assigend to.
+        """
         user = self.request.user
         return get_tasks(user)
 
     def patch(self, request):
+        """
+        This function updates a task with a given ID.
+        """
         task_id = get_task_id(request)
         if isinstance(task_id, Response):
             return task_id
@@ -230,6 +261,9 @@ class BoardView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request):
+        """
+        This function deletes a task with a given ID.
+        """
         user = self.request.user
 
         task_id = get_task_id(request)

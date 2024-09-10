@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>join-backend &mdash; join 2024 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6fefd858"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="join_backend package" href="join_backend.html" />
+    <link rel="prev" title="join.migrations package" href="join.migrations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            join
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="join.html">join package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">join-backend</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="join.html">join package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="join_backend.html">join_backend package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">join</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">join-backend</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="join-backend">
+<h1>join-backend<a class="headerlink" href="#join-backend" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="join.html">join package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="join.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="join.migrations.html">join.migrations package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.migrations.html#module-join.migrations.0001_initial">join.migrations.0001_initial module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.migrations.html#module-join.migrations.0002_user_user_color">join.migrations.0002_user_user_color module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.migrations.html#module-join.migrations.0003_user_phone_number">join.migrations.0003_user_phone_number module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.migrations.html#module-join.migrations.0004_team_user_teams">join.migrations.0004_team_user_teams module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.migrations.html#module-join.migrations.0005_alter_team_members_alter_team_owner_and_more">join.migrations.0005_alter_team_members_alter_team_owner_and_more module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.migrations.html#module-join.migrations.0006_alter_task_position_alter_task_urgency">join.migrations.0006_alter_task_position_alter_task_urgency module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.migrations.html#module-join.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="join.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="join.html#module-join.admin">join.admin module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.admin.TaskAdmin"><code class="docutils literal notranslate"><span class="pre">TaskAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.admin.TaskAdmin.filter_horizontal"><code class="docutils literal notranslate"><span class="pre">TaskAdmin.filter_horizontal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.admin.TaskAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">TaskAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.admin.TaskAdmin.list_filter"><code class="docutils literal notranslate"><span class="pre">TaskAdmin.list_filter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.admin.TaskAdmin.media"><code class="docutils literal notranslate"><span class="pre">TaskAdmin.media</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.admin.TaskAdmin.search_fields"><code class="docutils literal notranslate"><span class="pre">TaskAdmin.search_fields</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.admin.TeamAdmin"><code class="docutils literal notranslate"><span class="pre">TeamAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.admin.TeamAdmin.filter_horizontal"><code class="docutils literal notranslate"><span class="pre">TeamAdmin.filter_horizontal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.admin.TeamAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">TeamAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.admin.TeamAdmin.media"><code class="docutils literal notranslate"><span class="pre">TeamAdmin.media</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.admin.TeamAdmin.search_fields"><code class="docutils literal notranslate"><span class="pre">TeamAdmin.search_fields</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.admin.UserAdmin"><code class="docutils literal notranslate"><span class="pre">UserAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.admin.UserAdmin.fieldsets"><code class="docutils literal notranslate"><span class="pre">UserAdmin.fieldsets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.admin.UserAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">UserAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.admin.UserAdmin.media"><code class="docutils literal notranslate"><span class="pre">UserAdmin.media</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="join.html#module-join.apps">join.apps module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.apps.JoinConfig"><code class="docutils literal notranslate"><span class="pre">JoinConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.apps.JoinConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">JoinConfig.default_auto_field</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.apps.JoinConfig.name"><code class="docutils literal notranslate"><span class="pre">JoinConfig.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="join.html#module-join.backends">join.backends module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.backends.EmailBackend"><code class="docutils literal notranslate"><span class="pre">EmailBackend</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.backends.EmailBackend.authenticate"><code class="docutils literal notranslate"><span class="pre">EmailBackend.authenticate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="join.html#module-join.models">join.models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.models.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.CATEGORY_CHOICES"><code class="docutils literal notranslate"><span class="pre">Task.CATEGORY_CHOICES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.COLUMNS"><code class="docutils literal notranslate"><span class="pre">Task.COLUMNS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Task.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Task.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.PRIORITY_CHOICES"><code class="docutils literal notranslate"><span class="pre">Task.PRIORITY_CHOICES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.assignedTo"><code class="docutils literal notranslate"><span class="pre">Task.assignedTo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.author"><code class="docutils literal notranslate"><span class="pre">Task.author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.author_id"><code class="docutils literal notranslate"><span class="pre">Task.author_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.category"><code class="docutils literal notranslate"><span class="pre">Task.category</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.date"><code class="docutils literal notranslate"><span class="pre">Task.date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.get_category_display"><code class="docutils literal notranslate"><span class="pre">Task.get_category_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.get_next_by_date"><code class="docutils literal notranslate"><span class="pre">Task.get_next_by_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.get_position_display"><code class="docutils literal notranslate"><span class="pre">Task.get_position_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.get_previous_by_date"><code class="docutils literal notranslate"><span class="pre">Task.get_previous_by_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.get_urgency_display"><code class="docutils literal notranslate"><span class="pre">Task.get_urgency_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.id"><code class="docutils literal notranslate"><span class="pre">Task.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.objects"><code class="docutils literal notranslate"><span class="pre">Task.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.position"><code class="docutils literal notranslate"><span class="pre">Task.position</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.subtasks"><code class="docutils literal notranslate"><span class="pre">Task.subtasks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.task"><code class="docutils literal notranslate"><span class="pre">Task.task</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.title"><code class="docutils literal notranslate"><span class="pre">Task.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Task.urgency"><code class="docutils literal notranslate"><span class="pre">Task.urgency</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.models.Team"><code class="docutils literal notranslate"><span class="pre">Team</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Team.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Team.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Team.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Team.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Team.id"><code class="docutils literal notranslate"><span class="pre">Team.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Team.members"><code class="docutils literal notranslate"><span class="pre">Team.members</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Team.objects"><code class="docutils literal notranslate"><span class="pre">Team.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Team.owner"><code class="docutils literal notranslate"><span class="pre">Team.owner</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Team.owner_id"><code class="docutils literal notranslate"><span class="pre">Team.owner_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.Team.user_set"><code class="docutils literal notranslate"><span class="pre">Team.user_set</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.models.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">User.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">User.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.auth_token"><code class="docutils literal notranslate"><span class="pre">User.auth_token</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.date_joined"><code class="docutils literal notranslate"><span class="pre">User.date_joined</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.email"><code class="docutils literal notranslate"><span class="pre">User.email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.first_name"><code class="docutils literal notranslate"><span class="pre">User.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.get_next_by_date_joined"><code class="docutils literal notranslate"><span class="pre">User.get_next_by_date_joined()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.get_previous_by_date_joined"><code class="docutils literal notranslate"><span class="pre">User.get_previous_by_date_joined()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.groups"><code class="docutils literal notranslate"><span class="pre">User.groups</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.id"><code class="docutils literal notranslate"><span class="pre">User.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.is_active"><code class="docutils literal notranslate"><span class="pre">User.is_active</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.is_staff"><code class="docutils literal notranslate"><span class="pre">User.is_staff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.is_superuser"><code class="docutils literal notranslate"><span class="pre">User.is_superuser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.last_login"><code class="docutils literal notranslate"><span class="pre">User.last_login</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.last_name"><code class="docutils literal notranslate"><span class="pre">User.last_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.logentry_set"><code class="docutils literal notranslate"><span class="pre">User.logentry_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.password"><code class="docutils literal notranslate"><span class="pre">User.password</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.phone_number"><code class="docutils literal notranslate"><span class="pre">User.phone_number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.task_author"><code class="docutils literal notranslate"><span class="pre">User.task_author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.task_members"><code class="docutils literal notranslate"><span class="pre">User.task_members</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.team_members"><code class="docutils literal notranslate"><span class="pre">User.team_members</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.team_set"><code class="docutils literal notranslate"><span class="pre">User.team_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.teams"><code class="docutils literal notranslate"><span class="pre">User.teams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.user_color"><code class="docutils literal notranslate"><span class="pre">User.user_color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.user_permissions"><code class="docutils literal notranslate"><span class="pre">User.user_permissions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.models.User.username"><code class="docutils literal notranslate"><span class="pre">User.username</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="join.html#module-join.serializers">join.serializers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.serializers.EmailAuthTokenSerializer"><code class="docutils literal notranslate"><span class="pre">EmailAuthTokenSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.serializers.EmailAuthTokenSerializer.validate"><code class="docutils literal notranslate"><span class="pre">EmailAuthTokenSerializer.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.serializers.TaskReadSerializer"><code class="docutils literal notranslate"><span class="pre">TaskReadSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.serializers.TaskReadSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">TaskReadSerializer.Meta</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.serializers.TaskSerializer"><code class="docutils literal notranslate"><span class="pre">TaskSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.serializers.TaskSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">TaskSerializer.Meta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.serializers.TaskSerializer.create"><code class="docutils literal notranslate"><span class="pre">TaskSerializer.create()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.serializers.UserSerializer"><code class="docutils literal notranslate"><span class="pre">UserSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.serializers.UserSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">UserSerializer.Meta</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="join.html#module-join.tests">join.tests module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.tests.TeamTests"><code class="docutils literal notranslate"><span class="pre">TeamTests</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.tests.TeamTests.setUp"><code class="docutils literal notranslate"><span class="pre">TeamTests.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.tests.TeamTests.test_post_invalid_token"><code class="docutils literal notranslate"><span class="pre">TeamTests.test_post_invalid_token()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.tests.TeamTests.test_post_no_token"><code class="docutils literal notranslate"><span class="pre">TeamTests.test_post_no_token()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.tests.TeamTests.test_post_valid_token_invalid_data"><code class="docutils literal notranslate"><span class="pre">TeamTests.test_post_valid_token_invalid_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.tests.TeamTests.test_post_valid_token_valid_data"><code class="docutils literal notranslate"><span class="pre">TeamTests.test_post_valid_token_valid_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="join.html#module-join.utils">join.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.utils.get_task_id"><code class="docutils literal notranslate"><span class="pre">get_task_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.utils.get_team"><code class="docutils literal notranslate"><span class="pre">get_team()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.utils.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">get_user_by_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.utils.get_user_id"><code class="docutils literal notranslate"><span class="pre">get_user_id()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="join.html#module-join.views">join.views module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.views.AddMemberView"><code class="docutils literal notranslate"><span class="pre">AddMemberView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.AddMemberView.authentication_classes"><code class="docutils literal notranslate"><span class="pre">AddMemberView.authentication_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.AddMemberView.get"><code class="docutils literal notranslate"><span class="pre">AddMemberView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.AddMemberView.permission_classes"><code class="docutils literal notranslate"><span class="pre">AddMemberView.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.AddMemberView.post"><code class="docutils literal notranslate"><span class="pre">AddMemberView.post()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.views.AddTaskView"><code class="docutils literal notranslate"><span class="pre">AddTaskView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.AddTaskView.authentication_classes"><code class="docutils literal notranslate"><span class="pre">AddTaskView.authentication_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.AddTaskView.permission_classes"><code class="docutils literal notranslate"><span class="pre">AddTaskView.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.AddTaskView.post"><code class="docutils literal notranslate"><span class="pre">AddTaskView.post()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.views.BoardView"><code class="docutils literal notranslate"><span class="pre">BoardView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.BoardView.authentication_classes"><code class="docutils literal notranslate"><span class="pre">BoardView.authentication_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.BoardView.delete"><code class="docutils literal notranslate"><span class="pre">BoardView.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.BoardView.get"><code class="docutils literal notranslate"><span class="pre">BoardView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.BoardView.patch"><code class="docutils literal notranslate"><span class="pre">BoardView.patch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.BoardView.permission_classes"><code class="docutils literal notranslate"><span class="pre">BoardView.permission_classes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.views.LoginView"><code class="docutils literal notranslate"><span class="pre">LoginView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.LoginView.post"><code class="docutils literal notranslate"><span class="pre">LoginView.post()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.LoginView.serializer_class"><code class="docutils literal notranslate"><span class="pre">LoginView.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.views.LogoutView"><code class="docutils literal notranslate"><span class="pre">LogoutView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.LogoutView.permission_classes"><code class="docutils literal notranslate"><span class="pre">LogoutView.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.LogoutView.post"><code class="docutils literal notranslate"><span class="pre">LogoutView.post()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.views.RegisterView"><code class="docutils literal notranslate"><span class="pre">RegisterView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.RegisterView.create_team"><code class="docutils literal notranslate"><span class="pre">RegisterView.create_team()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.RegisterView.post"><code class="docutils literal notranslate"><span class="pre">RegisterView.post()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.views.TeamView"><code class="docutils literal notranslate"><span class="pre">TeamView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.TeamView.authentication_classes"><code class="docutils literal notranslate"><span class="pre">TeamView.authentication_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.TeamView.get"><code class="docutils literal notranslate"><span class="pre">TeamView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.TeamView.permission_classes"><code class="docutils literal notranslate"><span class="pre">TeamView.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.TeamView.post"><code class="docutils literal notranslate"><span class="pre">TeamView.post()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.TeamView.remove_member_from_task"><code class="docutils literal notranslate"><span class="pre">TeamView.remove_member_from_task()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html#join.views.TeamView.remove_member_from_team"><code class="docutils literal notranslate"><span class="pre">TeamView.remove_member_from_team()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="join.html#join.views.get_tasks"><code class="docutils literal notranslate"><span class="pre">get_tasks()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="join.html#module-join">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="join_backend.html">join_backend package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="join_backend.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="join_backend.html#module-join_backend.asgi">join_backend.asgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="join_backend.html#module-join_backend.settings">join_backend.settings module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="join_backend.html#module-join_backend.urls">join_backend.urls module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="join_backend.html#module-join_backend.wsgi">join_backend.wsgi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="join_backend.html#module-join_backend">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manage.html">manage module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manage.html#manage.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="join.migrations.html" class="btn btn-neutral float-left" title="join.migrations package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="join_backend.html" class="btn btn-neutral float-right" title="join_backend package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Martin Inglin.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
